@@ -51,9 +51,9 @@ class StudentDAO extends PostgresConnector {
 
   def updateValues(stm: Statement, set: Map[String, Any], condition: Map[String, Any]): Int = {
     //val k=value.map(l=>l._1)
-    val a=12
-    println(a.toString)
-    val k="12"
+//    val a=12
+//    println(a.toString)
+    //val k="12"
     //val sqlUpdate = s"UPDATE Student SET $col2.=?'$col2Update'=?,$col3=?'$col3Update=?' WHERE $col1=?;"
     val sqlUpdate = s"UPDATE Student SET ${set.map(p=>s"${p._1}='${p._2}'").mkString(" , ") } WHERE ${condition.map(p=>s"${p._1}='${p._2}'").mkString(" AND ")}"
 
@@ -83,21 +83,31 @@ object postGreSQLConnect {
 //    val s2= Student(2,"Alex","Maths",70)
 //    val s3= Student(3,"Alok","English",56)
 //    val s4= Student(4,"Ankit","Computers",80)
+//    val s5=Student(5,"Akshata","Science",85)
+//    val s6=Student(8,"Daniel","Marketing",45)
 //    a.insert(c,s1)
 //    a.insert(c,s2)
 //    a.insert(c,s3)
 //    a.insert(c,s4)
+//    a.insert(c,s5)
+//    a.insert(c,s6)
+
     a.read(c)
-    println("Enter the columns to update: ")
+    println("Enter the name of columns to update: ")
     val u1: String = readLine()
     println("Enter the update Value")
     val u2: Any=readLine()
-    val i: String= u1
-    val k:Any=u2
+    println("Mention the condition to Update where")
+    val i: String= readLine()
+    println("The column value is: ")
+    val k:Any=readLine()
     val t2=Map(u1-> u2)
     val t4=Map(i -> k)
     a.updateValues(c,t2,t4)
-    println("Enter the name of column you want to delete")
+    println("Do you want to delete any columns?")
+    val p: String=readLine()
+    if(p=="Yes"|| p=="YES")
+    {println("Enter the name of column you want to delete")
     val j1=readLine()
     println("Mention the condition for")
     val j2: Any= readLine()
@@ -105,10 +115,12 @@ object postGreSQLConnect {
 //    val m3=t3.productIterator.map{
 //      case(j1,j2) => (j1.toString -> j2)
 //    }.toMap
-    a.delete(c,t3)
+
+    a.delete(c,t3)}
+    else{
     //statement.executeUpdate(sqlInsert)
     //val k=c.setString()//input
-  a.connectionClose(b)
+  a.connectionClose(b)}
 
 
 
