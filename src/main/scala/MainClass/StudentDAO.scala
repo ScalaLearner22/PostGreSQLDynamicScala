@@ -92,7 +92,7 @@ object postGreSQLConnect {
     val u1: String = readLine()
     println("Enter the update Value")
     val u2: Any=readLine()
-val i: String= u1
+    val i: String= u1
     val k:Any=u2
     val t2=Map(u1-> u2)
     val t4=Map(i -> k)
