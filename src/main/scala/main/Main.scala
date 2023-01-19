@@ -1,6 +1,6 @@
 package main
 
-import databasemethods.StudentDAO
+import dao.StudentDAO
 import model.Student
 
 import scala.io.StdIn.{readInt, readLine}

@@ -1,4 +1,4 @@
-package databasemethods
+package dao
 
 import database.PostgresConnector
 import model.Student
