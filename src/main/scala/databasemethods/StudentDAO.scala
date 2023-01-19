@@ -1,7 +1,7 @@
-package Main
+package databasemethods
 
-import Database.PostgresConnector
-import Model.Student
+import database.PostgresConnector
+import model.Student
 
 import java.sql.{Connection, ResultSet, Statement}
 import scala.io.StdIn.{readInt, readLine}
