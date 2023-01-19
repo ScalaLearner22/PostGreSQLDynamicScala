@@ -1,7 +1,7 @@
-package MainClass
+package Main
 
-import CaseClassDB.Student
-import TraitsDB._
+import Database.PostgresConnector
+import Model.Student
 
 import java.sql.{Connection, ResultSet, Statement}
 import scala.io.StdIn.{readInt, readLine}
